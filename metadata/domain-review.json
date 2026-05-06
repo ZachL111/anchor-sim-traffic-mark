@@ -1,0 +1,73 @@
+{
+  "repo": "anchor-sim-traffic-mark",
+  "language": "C#",
+  "category": "Simulations",
+  "goal": "Create a C# reference implementation for traffic workflows, centered on stream reduction, windowed input fixtures, and late-data behavior checks.",
+  "review_model": {
+    "terms": [
+      "input pressure",
+      "state drift",
+      "review cost",
+      "decision risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "input pressure",
+      "signal": 77,
+      "slack": 30,
+      "drag": 24,
+      "confidence": 48,
+      "score": 160,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "state drift",
+      "signal": 52,
+      "slack": 46,
+      "drag": 15,
+      "confidence": 70,
+      "score": 175,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "review cost",
+      "signal": 83,
+      "slack": 36,
+      "drag": 26,
+      "confidence": 88,
+      "score": 212,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "decision risk",
+      "signal": 63,
+      "slack": 31,
+      "drag": 24,
+      "confidence": 80,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "input pressure",
+      "signal": 58,
+      "slack": 31,
+      "drag": 16,
+      "confidence": 78,
+      "score": 177,
+      "lane": "ship"
+    }
+  ]
+}
